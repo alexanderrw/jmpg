@@ -11,8 +11,7 @@
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane id="mainwindow" fx:id="mainwindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="mainwindow" fx:id="mainwindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <bottom>
       <BorderPane id="mediacontrolpane" fx:id="mediacontrolpane" prefHeight="100.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <center>
@@ -37,7 +36,7 @@
         <menus>
           <Menu fx:id="filemenu" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="fileopenbutton" mnemonicParsing="false" text="Open...">
+              <MenuItem fx:id="fileopenbutton" mnemonicParsing="false" onAction="#open_audio" text="Open...">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>

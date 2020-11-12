@@ -11,25 +11,33 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.BorderPane;
 
 public class Controller {
-	@FXML BorderPane mainwindow;
+	@FXML static BorderPane mainwindow;
 	
-	@FXML BorderPane mediacontrolpane;
-	@FXML ProgressBar song_progressbar;
-	@FXML Button playbutton;
-	@FXML Slider volumeslider;
-	@FXML Label filelabel;
+	@FXML static BorderPane mediacontrolpane;
+	@FXML static ProgressBar song_progressbar;
+	@FXML static Button playbutton;
+	@FXML static Slider volumeslider;
+	@FXML static Label filelabel;
 	
-	@FXML MenuBar menubar;
-	@FXML Menu filemenu;
-	@FXML MenuItem fileopenbutton;
-	@FXML Menu helpmenu;
-	@FXML MenuItem helpaboutbutton;
+	@FXML static MenuBar menubar;
+	@FXML static Menu filemenu;
+	@FXML static MenuItem fileopenbutton;
+	@FXML static Menu helpmenu;
+	@FXML static MenuItem helpaboutbutton;
 	
 	public Controller() {}
 	
     @FXML private void initialize() {
     	// Window is created.
+    	volumeslider.setValue(volumeslider.getMax() / 2);
     }
     
-    
+    @FXML private void open_audio() {
+    	FileManager.open_audio();
+		if (FileManager.audio_file != null) {
+			filelabel.setText(FileManager.audio_file.getName());
+		}
+		
+    	MediaManager.load_audio(FileManager.audio_file);
+    };
 }

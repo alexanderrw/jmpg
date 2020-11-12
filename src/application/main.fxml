@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane id="mainwindow" fx:id="mainwindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <BorderPane id="mediacontrolpane" fx:id="mediacontrolpane" prefHeight="100.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <center>
+            <ProgressBar id="song_progressbar" fx:id="song_progressbar" prefHeight="30.0" prefWidth="350.0" progress="0.0" BorderPane.alignment="CENTER" />
+         </center>
+         <padding>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+         </padding>
+         <left>
+            <Button id="playbutton" fx:id="playbutton" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="?" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Slider id="volumeslider" fx:id="volumeslider" prefHeight="30.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+         </right>
+         <top>
+            <Label id="filelabel" fx:id="filelabel" alignment="CENTER" minHeight="-Infinity" prefHeight="20.0" prefWidth="540.0" text="No audio is loaded." textAlignment="CENTER" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </bottom>
+   <top>
+      <MenuBar id="menubar" fx:id="menubar" prefHeight="25.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="filemenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="fileopenbutton" mnemonicParsing="false" text="Open...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu fx:id="helpmenu" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="helpaboutbutton" mnemonicParsing="false" text="About">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <padding>
+      <Insets bottom="15.0" />
+   </padding>
+</BorderPane>

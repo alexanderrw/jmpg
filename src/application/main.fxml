@@ -21,7 +21,7 @@
             <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
          </padding>
          <left>
-            <Button id="playbutton" fx:id="playbutton" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="?" BorderPane.alignment="CENTER" />
+            <Button id="playbutton" fx:id="playbutton" mnemonicParsing="false" onAction="#toggle_play_pause" prefHeight="30.0" prefWidth="50.0" text="&gt;" BorderPane.alignment="CENTER" />
          </left>
          <right>
             <Slider id="volumeslider" fx:id="volumeslider" prefHeight="30.0" prefWidth="50.0" BorderPane.alignment="CENTER" />

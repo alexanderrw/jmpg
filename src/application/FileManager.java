@@ -7,19 +7,19 @@ import javafx.stage.FileChooser.ExtensionFilter;
 
 public class FileManager {
 	static File audio_file;
-	static boolean is_open_dialog = false;
+	static File temp_audio_file;
 	
 	static void open_audio() {
-		if (!is_open_dialog) {
-			FileChooser file_chooser = new FileChooser();
-			file_chooser.setTitle("Open audio...");
-			ExtensionFilter audio_filter = new ExtensionFilter("Audio Files", "*.mp3");
-			file_chooser.getExtensionFilters().add(audio_filter);
-			file_chooser.setSelectedExtensionFilter(audio_filter);
-			
-			is_open_dialog = true;
-			audio_file = file_chooser.showOpenDialog(null);
-			is_open_dialog = false;
+		FileChooser file_chooser = new FileChooser();
+		file_chooser.setTitle("Open audio...");
+		ExtensionFilter audio_filter = new ExtensionFilter("Audio Files", "*.mp3");
+		file_chooser.getExtensionFilters().add(audio_filter);
+		file_chooser.setSelectedExtensionFilter(audio_filter);
+		
+		// Prevents unloading of currently open audio file if the user exits file chooser.
+		temp_audio_file = file_chooser.showOpenDialog(Controller.mainstage);
+		if (temp_audio_file != null) {
+			audio_file = temp_audio_file;
 		}
 	}
 }
